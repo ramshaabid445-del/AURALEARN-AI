@@ -1,0 +1,354 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "AuraLearn AI API",
+        "description": "API documentation for AuraLearn AI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Register a new user",
+                "operationId": "a718f172ff3ac464d723835815f8fb57",
+                "responses": {
+                    "201": {
+                        "description": "User registered successfully"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Authenticate a user and return a token",
+                "operationId": "44212a9096e4b09358281e9ec8a0701d",
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Log out the authenticated user",
+                "operationId": "79854151e609bd20032aa5aa4d5a35c0",
+                "responses": {
+                    "200": {
+                        "description": "Logged out successfully"
+                    }
+                }
+            }
+        },
+        "/api/courses": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "List courses with localization support",
+                "operationId": "c37c515ae1ea3ad48219b8179246858e",
+                "responses": {
+                    "200": {
+                        "description": "Courses retrieved successfully"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Create a new course",
+                "operationId": "d99c1c5d105ddd8df4d34b56870beef1",
+                "responses": {
+                    "201": {
+                        "description": "Course created successfully"
+                    }
+                }
+            }
+        },
+        "/api/courses/{id}": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Retrieve course details",
+                "operationId": "bc57e32b05958570eae4745a05618e50",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Course retrieved successfully"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Update an existing course",
+                "operationId": "cf6bd3bd850370cc47ef0c7ca9dd3b01",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Course updated successfully"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Delete a course",
+                "operationId": "bc05f35e36d8a2ba2193093110bc2629",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Course deleted successfully"
+                    }
+                }
+            }
+        },
+        "/api/discussions": {
+            "get": {
+                "tags": [
+                    "Discussions"
+                ],
+                "summary": "List discussions",
+                "operationId": "17aa932a04915e7552d26ab25bc3ad0d",
+                "responses": {
+                    "200": {
+                        "description": "Discussions retrieved successfully"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Discussions"
+                ],
+                "summary": "Create a discussion entry",
+                "operationId": "683adffcdd8f06a0d0677be252cc8910",
+                "responses": {
+                    "201": {
+                        "description": "Discussion created successfully"
+                    }
+                }
+            }
+        },
+        "/api/health": {
+            "get": {
+                "tags": [
+                    "Health"
+                ],
+                "summary": "Check application and database health",
+                "operationId": "d51f8143abf37a97a114e14d4849391d",
+                "responses": {
+                    "200": {
+                        "description": "Application health status"
+                    }
+                }
+            }
+        },
+        "/api/microservice/status": {
+            "get": {
+                "tags": [
+                    "Health"
+                ],
+                "summary": "Check external microservice health",
+                "operationId": "a36319450f6b685ba03c63e0b5e08832",
+                "responses": {
+                    "200": {
+                        "description": "External microservice health"
+                    }
+                }
+            }
+        },
+        "/api/students": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "List all students",
+                "operationId": "9f38d78e23663d865906d1918f55573b",
+                "responses": {
+                    "200": {
+                        "description": "Students retrieved successfully"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Create a new student",
+                "operationId": "90fecdc9e9ba90ffdb38f654a2bbd711",
+                "responses": {
+                    "201": {
+                        "description": "Student created successfully"
+                    }
+                }
+            }
+        },
+        "/api/students/{id}": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Retrieve a student by ID",
+                "operationId": "9e2f1ea9240129a6c583dcc0080808cb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Student retrieved successfully"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Update a student",
+                "operationId": "02b72a59111740170d15f3277ed47672",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Student updated successfully"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Delete a student",
+                "operationId": "46c88fa88727635601e96354e11e489c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Student deleted successfully"
+                    }
+                }
+            }
+        },
+        "/api/students/{id}/predict": {
+            "get": {
+                "tags": [
+                    "Students"
+                ],
+                "summary": "Generate a learning path prediction for a student",
+                "operationId": "b1dcf445147f68f5e9a41df6a9008ffa",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Prediction generated"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentication",
+            "description": "Authentication endpoints"
+        },
+        {
+            "name": "Courses",
+            "description": "Course management endpoints"
+        },
+        {
+            "name": "Discussions",
+            "description": "Discussion board endpoints"
+        },
+        {
+            "name": "Health",
+            "description": "Application and microservice health endpoints"
+        },
+        {
+            "name": "Students",
+            "description": "Student management endpoints"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "Bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ]
+}
