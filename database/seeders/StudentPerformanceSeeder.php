@@ -21,7 +21,7 @@ class StudentPerformanceSeeder extends Seeder
                 'enrolled_at' => now()->subMonths(8),
                 'performance' => [
                     'quiz_scores' => [85, 79, 92],
-                    'attendance' => 92,
+                    'attendance' => 92, // Ye input data hai, isay rehne dein
                 ],
             ],
             [
@@ -84,8 +84,10 @@ class StudentPerformanceSeeder extends Seeder
                 ['student_id' => $student->id],
                 [
                     'quiz_scores' => $data['performance']['quiz_scores'],
-                    'attendance' => $data['performance']['attendance'],
+                    // FIXED: Yahan attendance ko attendance_rate kar diya hai
+                    'attendance_rate' => $data['performance']['attendance'],
                     'predicted_grade' => $prediction['predicted_grade'],
+                    'risk_level' => $prediction['predicted_grade'] < 65 ? 'High' : 'Low',
                 ]
             );
         }

@@ -13,7 +13,7 @@ class StudentPerformance extends Model
     protected $fillable = [
         'student_id',
         'quiz_scores',
-        'attendance',
+        'attendance_rate',
         'predicted_grade',
     ];
 
